@@ -1,0 +1,3 @@
+create-electron-app app_name # template
+
+npm run start/test to run with electron
