@@ -11,6 +11,6 @@ This is an AI voice assistant bot based on the character Alfred from the Batman 
 3. Once your in the source directory type in **npm run start** which will initiate the program to start.
 4. Once the program starts click start and wait a few minutes until you hear Alfred speak.
 ## Application Screen: 
-<img src="/images/alfred-app.jpg"
-     alt="Markdown Monster icon"
+<img src="Alfred/images/alfred-app.jpg"
+     alt="Alfred Application"
      style="float: left; margin-right: 10px;" />
