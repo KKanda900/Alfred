@@ -25,7 +25,6 @@ def wakeWord(text):
 
     return False
 
-
 def endSession(text):
     END_WORDS = ['end', 'stop alfred', 'thats it']
     text = text.lower()
@@ -35,6 +34,22 @@ def endSession(text):
 
     return False
 
+def weatherVoice():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        r.adjust_for_ambient_noise(source)
+        assistant("What location do you want the weather for?")
+        audio = r.listen(source)
+    data = ''
+    try:
+        data = r.recognize_google(audio)
+        #print("You said: " + data)
+    except Exception as e:
+        print("Lets try again")
+        recordAudio()
+
+    data = data.lower()
+    return data
 
 def recordAudio():
     r = sr.Recognizer()
@@ -54,14 +69,6 @@ def recordAudio():
     return data
 
 
-""" def assistant(text):
-    # print(text)
-    myobj = gTTS(text=text, lang='en-GB', slow=False)
-    text = re.sub('[? ]+', '', text)
-    text = text + ".mp3"
-    myobj.save(text)
-    playsound(text) """
-
 def assistant(text):
     engine = pyttsx3.init()
     voices = engine.getProperty('voices')
@@ -69,17 +76,6 @@ def assistant(text):
     engine.say(text)
     engine.runAndWait()
     engine.stop()
-
-""" def Test():
-    engine = pyttsx3.init()
-    voices = engine.getProperty('voices')
-    for voice in voices:
-        print(voice, voice.id)
-        engine.setProperty('voice', voice.id[0])
-        engine.say("Hello World!")
-        engine.runAndWait()
-        engine.stop() """
-
 
 def gQuery(text):
     url = "https://www.google.com.tr/search?q={}".format(text)
@@ -91,7 +87,6 @@ def searchWeather(text):
     webbrowser.open_new_tab(url)
 
 # This definition will define all the actions needed by "alfred"
-
 
 def main():
     time.sleep(3)
@@ -113,8 +108,12 @@ def main():
             os.startfile(audio)
             main()
         elif("howstheweather" in audio):  # This is temporary
-            pass
+            location = weatherVoice()
+            searchWeather(location)
             main()
+        elif("" in audio):
+
+
         
 
 
