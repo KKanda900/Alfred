@@ -51,6 +51,23 @@ def weatherVoice():
     data = data.lower()
     return data
 
+def jot_down_task():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        r.adjust_for_ambient_noise(source)
+        assistant("What did you want me to write down for you?")
+        audio = r.listen(source)
+    data = ''
+    try:
+        data = r.recognize_google(audio)
+        #print("You said: " + data)
+    except Exception as e:
+        print("Lets try again")
+        recordAudio()
+
+    data = data.lower()
+    return data
+
 def recordAudio():
     r = sr.Recognizer()
     with sr.Microphone() as source:
@@ -92,7 +109,7 @@ def main():
     time.sleep(3)
     audio = recordAudio()
     while wakeWord(audio):
-        assistant("Whats on your mind?")
+        assistant("Welcome Karun! How may I be assistance to you?")
         print("Listening...")  # Just to clarify in test that it is listening
         audio = recordAudio()
         # print(audio)
@@ -111,12 +128,14 @@ def main():
             location = weatherVoice()
             searchWeather(location)
             main()
-        elif("" in audio):
-
-
+        elif("jot down" in audio):
+            task = jot_down_task()
+            f = open("../Data/tasks.txt", "a")
+            f.write("Noted Task:" + " " + task + "\n\n")
+            f.close()
+        else:
+            break
         
-
-
 if __name__ == "__main__":
     main()
     sys.stdout.flush()
