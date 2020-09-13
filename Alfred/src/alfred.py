@@ -17,7 +17,7 @@ warnings.filterwarnings('ignore')
 
 
 def wakeWord(text):
-    WAKE_WORDS = ['alfred', 'hey alfred', 'hello alfred', 'yo alfred']
+    WAKE_WORDS = ['alfred', 'hey alfred', 'hello alfred', 'yo alfred', 'I need help', 'can you help me with this?']
     text = text.lower()
     for phrase in WAKE_WORDS:
         if phrase in text:
@@ -135,7 +135,7 @@ def main():
             f.close()
         else:
             break
-        
+
 if __name__ == "__main__":
     main()
     sys.stdout.flush()
