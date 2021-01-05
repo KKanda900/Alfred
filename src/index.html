@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Alfred Home Page</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="alfred.js"></script>
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script type="noexecute" nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <div class="sidebar">
+      <h2>Alfred</h2>
+      <ul>
+        <li><a href="index.html"><i class="Home"></i>Home</a></li>
+        <li><a href="#"><i class="Notes"></i>Notes</a></li>
+        <li><a href="calendar.html"><i class="Calendar"></i>Calendar</a></li>
+      </ul>
+    </div>
+    <div class="main_content">
+      <div class="header">Welcome Karun! Click summon so we can start working.</div>
+      <div class="info">
+        <div><button class="btn" id="summon" onclick="startSpeech()">Summon</button></div>
+        <div id="al_model" style="display: none"><model-viewer src="alfred.glb" alt="Alfred Model"></model-viewer></div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
