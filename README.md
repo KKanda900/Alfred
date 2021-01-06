@@ -1,4 +1,4 @@
-# Alfred
+# Alfred 🤵
 
 ## Inspiration
 My main inspiration for this project was the character Alfred from the Batman series. In the series Alfred is a very useful character to Batman in every way. From making his food to getting him the specific weapons he needs for any battle. So I thought that a voice assistant that can replicate his usefulness in people's everyday lives would be very ideal instead of the useless voice assistants like **cough cough** Siri.
