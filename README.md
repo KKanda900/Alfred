@@ -7,10 +7,10 @@ My main inspiration for this project was the character Alfred from the Batman se
 It is a voice assistant that will help you with your everyday tasks that has the capabilities to understand what you are saying completely. It will do tasks from telling you the weather to writing down your to do for the day.
 
 ## How I built it
-The tools I used to complete this project is using Python for the back-end and ElectronJS framework for the front-end of this project.
+The tools I used to complete this project is using Python for the back-end and ElectronJS framework for the front-end of this project. Also implemented Google's text to speech API to translate audio to text and Python's Natural Language Toolkit to process input from the user.
 
 ## Challenges I ran into
-Nothing major just a few compilation errors here and there.
+Major challenge I ran into at first was thinking of the approach because in the Batman series, he is one of the main people that helps Batman so thinking of a voice assistant that can replicate that would be tough.
 
 ## Accomplishments that I'm proud of
 I am proud that I can say I made my voice assistance with a flair. Also, that I made a voice assistant for desktop users because we know not everyone likes Cortona. 😝
