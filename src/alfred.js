@@ -1,6 +1,5 @@
 
 function startSpeech(){
-
     var T = document.getElementById("al_model");
     T.style.display = "block";
 
