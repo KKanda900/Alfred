@@ -6,6 +6,12 @@ My main inspiration for this project was the character Alfred from the Batman se
 ## What it does
 It is a voice assistant that will help you with your everyday tasks that has the capabilities to understand what you are saying completely. It will help you do tasks that need to be done like jotting down important information, help you with cooking, and in general help you with any task that you throw at it.
 
+## How to use it
+To use Alfred, follow these steps:
+  1. Clone this repository
+  2. Go into the src directory
+  3. In the terminal, type in **electron .** and the Alfred application will start
+
 ## How I built it
 The tools I used to complete this project is using Python for the back-end and ElectronJS framework for the front-end of this project. Also implemented Google's text to speech API to translate audio to text and Python's Natural Language Toolkit to process input from the user.
 
